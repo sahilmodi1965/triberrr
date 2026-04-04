@@ -7,50 +7,73 @@
 <meta name="description" content="Book a tech expert to your doorstep. Device setup, Wi-Fi fixes, cybersecurity, AI tools, business digitization & more. Just WhatsApp us.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#1a1a2e;--accent:#e94560;--accent-hover:#c73550;--green:#25d366;--green-hover:#1ebe57;--bg:#f8f9fa;--card:#fff;--text:#1a1a2e;--muted:#6c757d;--border:#e9ecef;--radius:12px}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+:root{--primary:#1a1a2e;--accent:#e94560;--accent-hover:#c73550;--green:#25d366;--green-hover:#1ebe57;--bg:#f8f9fa;--card:#fff;--text:#1a1a2e;--muted:#6c757d;--border:#e9ecef;--radius:14px;--shadow:0 2px 12px rgba(0,0,0,.07)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;padding:60px 20px 50px;text-align:center;position:relative;overflow:hidden}
+.hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;padding:60px 20px 55px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(233,69,96,.08) 0%,transparent 50%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:40px;background:var(--bg);border-radius:50% 50% 0 0}
-.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:8px;letter-spacing:-1px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.5rem);font-weight:800;margin-bottom:8px;letter-spacing:-1px}
 .hero h1 span{color:var(--accent)}
-.hero .tagline{font-size:clamp(1rem,2.5vw,1.3rem);opacity:.9;max-width:600px;margin:0 auto 8px}
-.hero .sub{font-size:.95rem;opacity:.65;margin-bottom:30px}
+.hero .tagline{font-size:clamp(1rem,2.5vw,1.3rem);opacity:.92;max-width:600px;margin:0 auto 6px}
+.hero .sub{font-size:.95rem;opacity:.6;margin-bottom:28px}
 .hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;font-size:1.1rem;font-weight:700;padding:16px 36px;border-radius:50px;transition:all .2s;box-shadow:0 4px 20px rgba(37,211,102,.4)}
 .hero-cta:hover{background:var(--green-hover);transform:translateY(-2px);box-shadow:0 6px 28px rgba(37,211,102,.5)}
 .hero-cta svg{width:24px;height:24px;fill:#fff}
-.hero-steps{display:flex;justify-content:center;gap:40px;margin-top:32px;flex-wrap:wrap}
+.hero-steps{display:flex;justify-content:center;gap:40px;margin-top:30px;flex-wrap:wrap}
 .hero-steps .step{text-align:center;opacity:.85}
 .hero-steps .step .num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.15);font-weight:700;margin-bottom:6px;font-size:.95rem}
 .hero-steps .step p{font-size:.85rem}
 
+/* SECTION TITLES */
+.section-title{max-width:1200px;margin:0 auto;padding:10px 20px 16px;font-size:1.4rem;font-weight:800;color:var(--primary)}
+.section-title .highlight{color:var(--accent)}
+.section-subtitle{max-width:1200px;margin:-8px auto 16px;padding:0 20px;font-size:.9rem;color:var(--muted)}
+
+/* POPULAR SERVICES */
+.popular-wrap{max-width:1200px;margin:0 auto 10px;padding:0 20px}
+.popular-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.popular-card{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:16px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
+.popular-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 24px rgba(233,69,96,.12)}
+.popular-card .pop-icon{font-size:1.6rem;margin-bottom:8px}
+.popular-card .pop-name{font-size:.95rem;font-weight:700;margin-bottom:4px;line-height:1.3}
+.popular-card .pop-price{font-size:.85rem;color:var(--accent);font-weight:700}
+.popular-card .pop-tag{position:absolute;top:10px;right:10px;background:var(--accent);color:#fff;font-size:.65rem;padding:2px 8px;border-radius:20px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.popular-card .pop-book{display:flex;align-items:center;gap:5px;margin-top:10px;font-size:.8rem;color:var(--green);font-weight:600}
+.popular-card .pop-book svg{width:14px;height:14px;fill:var(--green)}
+
 /* SEARCH */
-.search-wrap{max-width:700px;margin:-20px auto 30px;padding:0 20px;position:relative;z-index:2}
+.search-wrap{max-width:700px;margin:-20px auto 20px;padding:0 20px;position:relative;z-index:2}
 .search-box{width:100%;padding:16px 20px 16px 50px;border:2px solid var(--border);border-radius:50px;font-size:1rem;outline:none;transition:border .2s;background:var(--card);box-shadow:0 4px 20px rgba(0,0,0,.08)}
 .search-box:focus{border-color:var(--accent)}
 .search-icon{position:absolute;left:38px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted)}
 .search-count{text-align:center;margin-top:10px;font-size:.85rem;color:var(--muted)}
 
-/* CATEGORIES */
-.container{max-width:1100px;margin:0 auto;padding:0 20px 40px}
-.category{margin-bottom:28px}
-.cat-header{display:flex;align-items:center;gap:12px;cursor:pointer;padding:14px 18px;background:var(--card);border-radius:var(--radius);box-shadow:0 1px 4px rgba(0,0,0,.06);border:1px solid var(--border);transition:all .2s;user-select:none}
-.cat-header:hover{box-shadow:0 2px 10px rgba(0,0,0,.1)}
-.cat-icon{font-size:1.5rem;width:40px;text-align:center;flex-shrink:0}
-.cat-title{font-size:1.1rem;font-weight:700;flex:1}
-.cat-count{font-size:.8rem;background:var(--accent);color:#fff;padding:2px 10px;border-radius:20px;font-weight:600}
-.cat-arrow{font-size:1.2rem;transition:transform .3s;color:var(--muted)}
-.cat-header.open .cat-arrow{transform:rotate(180deg)}
-.cat-services{display:none;padding:10px 0 0 0}
-.cat-header.open+.cat-services{display:block}
-.service-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;padding:0 4px}
-.service-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;background:var(--bg);border:1px solid var(--border);transition:all .2s;cursor:pointer}
-.service-item:hover{border-color:var(--accent);background:#fff0f3;transform:translateX(3px)}
-.service-item .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
-.service-item span{font-size:.92rem}
-.service-item.hidden{display:none}
+/* CATEGORY GRID */
+.container{max-width:1200px;margin:0 auto;padding:0 20px 40px}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.cat-card{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .25s;cursor:pointer}
+.cat-card:hover{border-color:var(--accent);box-shadow:0 4px 20px rgba(233,69,96,.1)}
+.cat-card.open{grid-column:1 / -1;border-color:var(--accent)}
+.cat-top{display:flex;align-items:center;gap:12px;padding:16px 18px;user-select:none}
+.cat-top .cat-icon{font-size:1.8rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--bg);border-radius:10px;flex-shrink:0}
+.cat-top .cat-info{flex:1;min-width:0}
+.cat-top .cat-title{font-size:1rem;font-weight:700;line-height:1.3}
+.cat-top .cat-meta{font-size:.78rem;color:var(--muted);margin-top:2px}
+.cat-top .cat-arrow{font-size:.9rem;color:var(--muted);transition:transform .3s;background:var(--bg);width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%;flex-shrink:0}
+.cat-card.open .cat-arrow{transform:rotate(180deg);background:var(--accent);color:#fff}
+.cat-expand{display:none;border-top:1px solid var(--border);padding:16px 18px}
+.cat-card.open .cat-expand{display:block}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
+.svc-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;border-radius:10px;background:var(--bg);border:1px solid var(--border);transition:all .2s;cursor:pointer}
+.svc-item:hover{border-color:var(--accent);background:#fff0f3;transform:translateX(2px)}
+.svc-left{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+.svc-left .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.svc-left .svc-name{font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.svc-price{font-size:.8rem;color:var(--accent);font-weight:700;white-space:nowrap;flex-shrink:0}
+.svc-item.hidden{display:none}
 
 /* FLOATING CTA */
 .float-cta{position:fixed;bottom:24px;right:24px;z-index:100;display:flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:14px 24px;border-radius:50px;font-weight:700;font-size:1rem;box-shadow:0 4px 24px rgba(37,211,102,.45);transition:all .2s;animation:pulse 2s infinite}
@@ -60,7 +83,7 @@ a{text-decoration:none;color:inherit}
 
 /* FOOTER */
 .footer{text-align:center;padding:40px 20px;background:var(--primary);color:#fff}
-.footer h2{font-size:1.6rem;margin-bottom:8px}
+.footer h2{font-size:1.5rem;margin-bottom:8px}
 .footer p{opacity:.7;margin-bottom:20px;font-size:.95rem}
 .footer .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:14px 32px;border-radius:50px;font-weight:700;font-size:1.05rem;transition:all .2s}
 .footer .cta-btn:hover{background:var(--green-hover);transform:translateY(-2px)}
@@ -73,12 +96,20 @@ a{text-decoration:none;color:inherit}
 .no-results h3{font-size:1.2rem;margin-bottom:8px}
 .no-results a{color:var(--green);font-weight:600}
 
-@media(max-width:600px){
-  .hero{padding:44px 16px 40px}
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero{padding:44px 16px 45px}
   .hero-steps{gap:20px}
+  .popular-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .cat-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
   .float-cta span.label{display:none}
-  .float-cta{padding:14px 18px}
-  .service-grid{grid-template-columns:1fr}
+  .float-cta{padding:14px 18px;bottom:16px;right:16px}
+  .section-title{font-size:1.2rem}
+}
+@media(max-width:400px){
+  .popular-grid{grid-template-columns:1fr}
+  .popular-card{padding:14px}
 }
 </style>
 </head>
@@ -89,7 +120,7 @@ a{text-decoration:none;color:inherit}
   <h1><span>Triberr</span></h1>
   <p class="tagline">A tech expert at your doorstep. Setup, fix, or learn — we come to you.</p>
   <p class="sub">For families, students, founders, shops & communities</p>
-  <a href="https://wa.me/918496861622?text=Hi%20Triberr!%20I%20need%20help%20with%20..." class="hero-cta" id="mainCta">
+  <a href="https://wa.me/918496861622?text=Hi%20Triberr!%20I%20need%20help%20with%20..." class="hero-cta" target="_blank">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     Book a Visit on WhatsApp
   </a>
@@ -103,9 +134,14 @@ a{text-decoration:none;color:inherit}
 <!-- SEARCH -->
 <div class="search-wrap">
   <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-  <input type="text" class="search-box" id="searchBox" placeholder="Search services... e.g. Wi-Fi, laptop, AI, shop, reels">
+  <input type="text" class="search-box" id="searchBox" placeholder="Search 250+ services... e.g. Wi-Fi, laptop, AI, shop, reels">
   <div class="search-count" id="searchCount"></div>
 </div>
+
+<!-- POPULAR SERVICES -->
+<h2 class="section-title">Most Asked-For <span class="highlight">Services</span></h2>
+<p class="section-subtitle">Top picks from families, founders & shop owners</p>
+<div class="popular-wrap" id="popularWrap"></div>
 
 <!-- NO RESULTS -->
 <div class="no-results" id="noResults">
@@ -113,8 +149,11 @@ a{text-decoration:none;color:inherit}
   <p>Can't find what you need? Just ask us — <a href="https://wa.me/918496861622?text=Hi%20Triberr!%20I%20need%20help%20with%20..." target="_blank">message on WhatsApp</a></p>
 </div>
 
-<!-- SERVICES -->
-<div class="container" id="serviceContainer">
+<!-- ALL SERVICES -->
+<h2 class="section-title" id="allServicesTitle" style="margin-top:30px">All <span class="highlight">Services</span></h2>
+<p class="section-subtitle">Tap a category to see services and pricing</p>
+<div class="container">
+  <div class="cat-grid" id="catGrid"></div>
 </div>
 
 <!-- FOOTER -->
@@ -129,105 +168,207 @@ a{text-decoration:none;color:inherit}
 </footer>
 
 <!-- FLOATING CTA -->
-<a href="https://wa.me/918496861622?text=Hi%20Triberr!%20I%20need%20help%20with%20..." class="float-cta" target="_blank" id="floatCta">
+<a href="https://wa.me/918496861622?text=Hi%20Triberr!%20I%20need%20help%20with%20..." class="float-cta" target="_blank">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span class="label">WhatsApp Us</span>
 </a>
 
 <script>
+const WA = "918496861622";
+const waLink = (svc) => `https://wa.me/${WA}?text=${encodeURIComponent("Hi Triberr! I need help with: " + svc)}`;
+const waSvg = `<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
+
+// SERVICE DATA with INR pricing
 const SERVICES = [
-  { cat: "Home Device Setup", icon: "💻", services: ["New laptop setup","New phone setup","Tablet/iPad setup","Desktop setup","MacBook setup","Smartwatch setup","Data transfer from old device","App installation","Language/settings personalization","Email/account sign-in setup"] },
-  { cat: "Home Wi-Fi & Connectivity", icon: "📶", services: ["Wi-Fi router setup","Internet troubleshooting","Extender/repeater setup","Dead-zone fixes","Printer Wi-Fi connection","Smart TV internet setup","Mesh network setup","Basic home network cleanup"] },
-  { cat: "Laptop & Computer Rescue", icon: "🛠️", services: ["Slow laptop cleanup","Startup optimization","Storage cleanup","Virus/basic malware cleanup","OS reinstall support","Software installation","Browser/email issues","File organization","Backup setup","External drive setup"] },
-  { cat: "Phone Help", icon: "📱", services: ["Phone migration","Contacts/photos backup","WhatsApp backup & restore","App cleanup","iPhone/Android setup","Security/privacy settings","Scam app review","Family sharing setup","Lost-phone preparedness"] },
-  { cat: "Smart Home Help", icon: "🏠", services: ["Smart TV setup","Streaming apps/login setup","Chromecast/Fire Stick setup","Smart speaker setup","Video doorbell setup","Smart bulb/camera setup","Basic automation routines","Home device syncing"] },
-  { cat: "Printer / Scanner / Office-at-Home", icon: "🖨️", services: ["Printer installation","Scanner setup","Wireless printing","Print troubleshooting","Driver install","Scan-to-email setup","Home office workstation setup"] },
-  { cat: "Family Tech Help", icon: "👨‍👩‍👧‍👦", services: ["Help for elderly parents","Video call setup","Family cloud photo backup","Family email/account setup","School app setup","Parent-child device setup","Parental controls","Safe browsing setup","Shared family calendar setup"] },
-  { cat: "Personal Cyber Safety", icon: "🔒", services: ["Password manager setup","2FA setup","Google/Apple account safety check","WhatsApp safety check","Email compromise check","Scam awareness setup","Backup & recovery readiness","Privacy settings audit","Home Wi-Fi safety basics","\"Am I hacked?\" diagnostic"] },
-  { cat: "Digital Life Organization", icon: "📁", services: ["File/folder cleanup","Google Drive setup","iCloud setup","Dropbox/OneDrive setup","Notes/task app setup","Calendar setup","Digital declutter","Inbox cleanup rules","Subscription cleanup","Photo/document archiving"] },
-  { cat: "Student & Education Setup", icon: "🎓", services: ["Laptop for school/college setup","Assignment workflow setup","Google Docs/Slides/Sheets setup","Zoom/Meet/Teams setup","File backup system","Research/AI setup","Exam productivity tools","Coding/software environment setup"] },
-  { cat: "Founder / Freelancer Setup", icon: "🚀", services: ["Work laptop stack setup","Email/domain setup","Calendar & scheduling setup","Proposal/invoice system","CRM setup","Notion/Drive organization","Client follow-up system","AI productivity setup","Lead tracking sheet","Meeting notes system"] },
-  { cat: "Small Business Digitization", icon: "🏪", services: ["Billing/POS setup","UPI QR setup","Inventory tracker","Daily sales reporting","Expense tracker","Vendor tracker","Staff attendance tracker","Payroll sheet","WhatsApp Business setup","Order-taking workflow","Customer database setup","Google Business profile setup","Catalog digitization","Menu digitization","Basic CCTV/router setup"] },
-  { cat: "Shop & Local Business Operations", icon: "🛒", services: ["Kirana tech setup","Pharmacy system support","Salon/spa booking setup","Clinic appointment setup","Restaurant menu + order flow","Boutique catalog setup","Coaching center admin setup","Small warehouse/stock sheet setup","Society office admin setup","Apartment management workflow basics"] },
-  { cat: "AI at Your Desk", icon: "🤖", services: ["ChatGPT setup","Copilot/Gemini setup","Prompt setup for daily work","AI for email writing","AI for proposals","AI for Excel/Sheets","AI note-taking","AI research workflow","AI for customer replies","AI for small business owners","AI for students","AI for content creation"] },
-  { cat: "No-Code & Lightweight Automation", icon: "⚡", services: ["Google Forms + Sheets workflows","Reminder automation","Lead capture automation","Follow-up automation","Simple dashboards","Internal tracker setup","Approval/request forms","Basic CRM systems","Airtable/Notion setup","Zapier/Make style workflows"] },
-  { cat: "Website & Online Presence", icon: "🌐", services: ["One-page website setup","Portfolio site setup","Local business website","Booking page setup","Landing page setup","Contact form setup","Domain purchase/connect","Basic SEO setup","Google Maps listing optimization","Review collection flow"] },
-  { cat: "E-Commerce & Selling Online", icon: "🛍️", services: ["WhatsApp storefront setup","Instagram shop flow guidance","Product catalog setup","Shopify/basic store setup","Payment link setup","Order form system","Customer inquiry workflow","Simple online order-taking setup"] },
-  { cat: "Content Creation Support", icon: "🎬", services: ["Reels shooting support","Content planning","Social media profile setup","Instagram bio/page optimization","Short-form reel editing","Thumbnail/basic cover creation","Caption writing support","Posting workflow setup","Content calendar","Creator tool stack setup","AI-assisted content repurposing","YouTube basics setup","Podcast/basic recording setup"] },
-  { cat: "Reel-Making / Creator-on-Ground", icon: "🎥", services: ["Shoot at your home/shop","Shoot talking-head reels","Product demo reels","Testimonial videos","Store walk-through videos","Founder intro videos","Event snippets","Before/after transformation reels","Voiceover + subtitles","Reels batch shoot day","Mobile filming help","Lighting/mic/basic setup"] },
-  { cat: "Community & Society Services", icon: "🏘️", services: ["Society office tech setup","Visitor management sheet/system","Broadcast/announcement system","Resident directory digitization","Committee workflow setup","Event registration forms","Community payment reminders","Local business directory creation","Community WhatsApp admin support","Society security/camera coordination basics"] },
-  { cat: "Event & Occasion Tech Help", icon: "🎉", services: ["Wedding/family event tech setup","Guest coordination sheets","Photo-sharing system","Invitation/helpdesk setup","Event livestream setup","Music/screen basic tech support","Vendor coordination docs","Digital RSVP system"] },
-  { cat: "Buying Advice / Advisory Visit", icon: "🧭", services: ["Which laptop to buy","Which phone to buy","Which printer/router to buy","What software to use","How to digitize the shop","What to automate first","What to stop paying for","Home/family tech audit","Office/shop tech audit"] },
-  { cat: "Training & Handholding", icon: "🎯", services: ["Teach my parents how to use phone/laptop","Teach my staff to use software","AI training for teams","WhatsApp Business training","Excel/Sheets basics","Cyber hygiene training","Social media content training","Business owner digital literacy session"] },
-  { cat: "Ongoing Support Plans", icon: "🔄", services: ["Monthly family tech support","Monthly business tech support","Remote helpdesk support","Quarterly cyber checkup","Monthly content support","Device maintenance plan","Founder productivity support plan"] },
-  { cat: "Premium Concierge", icon: "⭐", services: ["Personal tech manager","Family digital setup day","Business digitization day","Founder workflow redesign","Full home-office setup","Full shop tech transformation","\"Come and solve everything\" visit"] },
-  { cat: "Remote Follow-On Project Work", icon: "📊", services: ["Custom dashboard","CRM customization","Website improvements","Automation build","Reporting system","Lead-gen systems","Content ops system","Inventory logic improvement","Proposal/quotation generator","Booking/order management system"] }
+  { cat:"Home Device Setup", icon:"💻", services:[
+    {n:"New laptop setup",p:"499"},{n:"New phone setup",p:"299"},{n:"Tablet/iPad setup",p:"399"},{n:"Desktop setup",p:"599"},{n:"MacBook setup",p:"599"},{n:"Smartwatch setup",p:"299"},{n:"Data transfer from old device",p:"499"},{n:"App installation",p:"199"},{n:"Language/settings personalization",p:"199"},{n:"Email/account sign-in setup",p:"199"}
+  ]},
+  { cat:"Home Wi-Fi & Connectivity", icon:"📶", services:[
+    {n:"Wi-Fi router setup",p:"399"},{n:"Internet troubleshooting",p:"349"},{n:"Extender/repeater setup",p:"399"},{n:"Dead-zone fixes",p:"499"},{n:"Printer Wi-Fi connection",p:"299"},{n:"Smart TV internet setup",p:"299"},{n:"Mesh network setup",p:"799"},{n:"Basic home network cleanup",p:"399"}
+  ]},
+  { cat:"Laptop & Computer Rescue", icon:"🛠️", services:[
+    {n:"Slow laptop cleanup",p:"499"},{n:"Startup optimization",p:"399"},{n:"Storage cleanup",p:"349"},{n:"Virus/basic malware cleanup",p:"599"},{n:"OS reinstall support",p:"799"},{n:"Software installation",p:"299"},{n:"Browser/email issues",p:"249"},{n:"File organization",p:"349"},{n:"Backup setup",p:"399"},{n:"External drive setup",p:"249"}
+  ]},
+  { cat:"Phone Help", icon:"📱", services:[
+    {n:"Phone migration",p:"399"},{n:"Contacts/photos backup",p:"299"},{n:"WhatsApp backup & restore",p:"299"},{n:"App cleanup",p:"199"},{n:"iPhone/Android setup",p:"399"},{n:"Security/privacy settings",p:"299"},{n:"Scam app review",p:"249"},{n:"Family sharing setup",p:"349"},{n:"Lost-phone preparedness",p:"249"}
+  ]},
+  { cat:"Smart Home Help", icon:"🏠", services:[
+    {n:"Smart TV setup",p:"399"},{n:"Streaming apps/login setup",p:"299"},{n:"Chromecast/Fire Stick setup",p:"349"},{n:"Smart speaker setup",p:"349"},{n:"Video doorbell setup",p:"499"},{n:"Smart bulb/camera setup",p:"399"},{n:"Basic automation routines",p:"599"},{n:"Home device syncing",p:"399"}
+  ]},
+  { cat:"Printer / Scanner / Office-at-Home", icon:"🖨️", services:[
+    {n:"Printer installation",p:"349"},{n:"Scanner setup",p:"299"},{n:"Wireless printing",p:"299"},{n:"Print troubleshooting",p:"299"},{n:"Driver install",p:"199"},{n:"Scan-to-email setup",p:"299"},{n:"Home office workstation setup",p:"999"}
+  ]},
+  { cat:"Family Tech Help", icon:"👨‍👩‍👧‍👦", services:[
+    {n:"Help for elderly parents",p:"499"},{n:"Video call setup",p:"249"},{n:"Family cloud photo backup",p:"399"},{n:"Family email/account setup",p:"349"},{n:"School app setup",p:"249"},{n:"Parent-child device setup",p:"399"},{n:"Parental controls",p:"349"},{n:"Safe browsing setup",p:"299"},{n:"Shared family calendar setup",p:"249"}
+  ]},
+  { cat:"Personal Cyber Safety", icon:"🔒", services:[
+    {n:"Password manager setup",p:"399"},{n:"2FA setup",p:"299"},{n:"Google/Apple account safety check",p:"349"},{n:"WhatsApp safety check",p:"249"},{n:"Email compromise check",p:"399"},{n:"Scam awareness setup",p:"299"},{n:"Backup & recovery readiness",p:"399"},{n:"Privacy settings audit",p:"349"},{n:"Home Wi-Fi safety basics",p:"299"},{n:"\"Am I hacked?\" diagnostic",p:"499"}
+  ]},
+  { cat:"Digital Life Organization", icon:"📁", services:[
+    {n:"File/folder cleanup",p:"349"},{n:"Google Drive setup",p:"299"},{n:"iCloud setup",p:"299"},{n:"Dropbox/OneDrive setup",p:"299"},{n:"Notes/task app setup",p:"249"},{n:"Calendar setup",p:"199"},{n:"Digital declutter",p:"499"},{n:"Inbox cleanup rules",p:"299"},{n:"Subscription cleanup",p:"249"},{n:"Photo/document archiving",p:"399"}
+  ]},
+  { cat:"Student & Education Setup", icon:"🎓", services:[
+    {n:"Laptop for school/college setup",p:"499"},{n:"Assignment workflow setup",p:"349"},{n:"Google Docs/Slides/Sheets setup",p:"249"},{n:"Zoom/Meet/Teams setup",p:"249"},{n:"File backup system",p:"299"},{n:"Research/AI setup",p:"399"},{n:"Exam productivity tools",p:"349"},{n:"Coding/software environment setup",p:"599"}
+  ]},
+  { cat:"Founder / Freelancer Setup", icon:"🚀", services:[
+    {n:"Work laptop stack setup",p:"699"},{n:"Email/domain setup",p:"499"},{n:"Calendar & scheduling setup",p:"349"},{n:"Proposal/invoice system",p:"499"},{n:"CRM setup",p:"799"},{n:"Notion/Drive organization",p:"499"},{n:"Client follow-up system",p:"599"},{n:"AI productivity setup",p:"499"},{n:"Lead tracking sheet",p:"399"},{n:"Meeting notes system",p:"349"}
+  ]},
+  { cat:"Small Business Digitization", icon:"🏪", services:[
+    {n:"Billing/POS setup",p:"799"},{n:"UPI QR setup",p:"199"},{n:"Inventory tracker",p:"599"},{n:"Daily sales reporting",p:"499"},{n:"Expense tracker",p:"399"},{n:"Vendor tracker",p:"399"},{n:"Staff attendance tracker",p:"399"},{n:"Payroll sheet",p:"499"},{n:"WhatsApp Business setup",p:"349"},{n:"Order-taking workflow",p:"599"},{n:"Customer database setup",p:"499"},{n:"Google Business profile setup",p:"349"},{n:"Catalog digitization",p:"599"},{n:"Menu digitization",p:"499"},{n:"Basic CCTV/router setup",p:"799"}
+  ]},
+  { cat:"Shop & Local Business Operations", icon:"🛒", services:[
+    {n:"Kirana tech setup",p:"699"},{n:"Pharmacy system support",p:"799"},{n:"Salon/spa booking setup",p:"699"},{n:"Clinic appointment setup",p:"699"},{n:"Restaurant menu + order flow",p:"799"},{n:"Boutique catalog setup",p:"599"},{n:"Coaching center admin setup",p:"699"},{n:"Small warehouse/stock sheet setup",p:"599"},{n:"Society office admin setup",p:"699"},{n:"Apartment management workflow basics",p:"799"}
+  ]},
+  { cat:"AI at Your Desk", icon:"🤖", services:[
+    {n:"ChatGPT setup",p:"299"},{n:"Copilot/Gemini setup",p:"299"},{n:"Prompt setup for daily work",p:"399"},{n:"AI for email writing",p:"349"},{n:"AI for proposals",p:"399"},{n:"AI for Excel/Sheets",p:"399"},{n:"AI note-taking",p:"299"},{n:"AI research workflow",p:"399"},{n:"AI for customer replies",p:"349"},{n:"AI for small business owners",p:"499"},{n:"AI for students",p:"299"},{n:"AI for content creation",p:"399"}
+  ]},
+  { cat:"No-Code & Lightweight Automation", icon:"⚡", services:[
+    {n:"Google Forms + Sheets workflows",p:"399"},{n:"Reminder automation",p:"299"},{n:"Lead capture automation",p:"499"},{n:"Follow-up automation",p:"499"},{n:"Simple dashboards",p:"599"},{n:"Internal tracker setup",p:"449"},{n:"Approval/request forms",p:"399"},{n:"Basic CRM systems",p:"699"},{n:"Airtable/Notion setup",p:"499"},{n:"Zapier/Make style workflows",p:"699"}
+  ]},
+  { cat:"Website & Online Presence", icon:"🌐", services:[
+    {n:"One-page website setup",p:"1,999"},{n:"Portfolio site setup",p:"1,499"},{n:"Local business website",p:"1,999"},{n:"Booking page setup",p:"799"},{n:"Landing page setup",p:"999"},{n:"Contact form setup",p:"399"},{n:"Domain purchase/connect",p:"399"},{n:"Basic SEO setup",p:"599"},{n:"Google Maps listing optimization",p:"399"},{n:"Review collection flow",p:"399"}
+  ]},
+  { cat:"E-Commerce & Selling Online", icon:"🛍️", services:[
+    {n:"WhatsApp storefront setup",p:"599"},{n:"Instagram shop flow guidance",p:"499"},{n:"Product catalog setup",p:"599"},{n:"Shopify/basic store setup",p:"1,999"},{n:"Payment link setup",p:"299"},{n:"Order form system",p:"499"},{n:"Customer inquiry workflow",p:"399"},{n:"Simple online order-taking setup",p:"599"}
+  ]},
+  { cat:"Content Creation Support", icon:"🎬", services:[
+    {n:"Reels shooting support",p:"799"},{n:"Content planning",p:"599"},{n:"Social media profile setup",p:"349"},{n:"Instagram bio/page optimization",p:"299"},{n:"Short-form reel editing",p:"499"},{n:"Thumbnail/basic cover creation",p:"299"},{n:"Caption writing support",p:"249"},{n:"Posting workflow setup",p:"349"},{n:"Content calendar",p:"399"},{n:"Creator tool stack setup",p:"499"},{n:"AI-assisted content repurposing",p:"499"},{n:"YouTube basics setup",p:"399"},{n:"Podcast/basic recording setup",p:"699"}
+  ]},
+  { cat:"Reel-Making / Creator-on-Ground", icon:"🎥", services:[
+    {n:"Shoot at your home/shop",p:"1,499"},{n:"Shoot talking-head reels",p:"999"},{n:"Product demo reels",p:"1,199"},{n:"Testimonial videos",p:"999"},{n:"Store walk-through videos",p:"1,199"},{n:"Founder intro videos",p:"999"},{n:"Event snippets",p:"799"},{n:"Before/after transformation reels",p:"999"},{n:"Voiceover + subtitles",p:"499"},{n:"Reels batch shoot day",p:"2,999"},{n:"Mobile filming help",p:"599"},{n:"Lighting/mic/basic setup",p:"499"}
+  ]},
+  { cat:"Community & Society Services", icon:"🏘️", services:[
+    {n:"Society office tech setup",p:"999"},{n:"Visitor management sheet/system",p:"599"},{n:"Broadcast/announcement system",p:"499"},{n:"Resident directory digitization",p:"599"},{n:"Committee workflow setup",p:"499"},{n:"Event registration forms",p:"399"},{n:"Community payment reminders",p:"399"},{n:"Local business directory creation",p:"599"},{n:"Community WhatsApp admin support",p:"349"},{n:"Society security/camera coordination basics",p:"699"}
+  ]},
+  { cat:"Event & Occasion Tech Help", icon:"🎉", services:[
+    {n:"Wedding/family event tech setup",p:"1,499"},{n:"Guest coordination sheets",p:"499"},{n:"Photo-sharing system",p:"399"},{n:"Invitation/helpdesk setup",p:"499"},{n:"Event livestream setup",p:"999"},{n:"Music/screen basic tech support",p:"699"},{n:"Vendor coordination docs",p:"399"},{n:"Digital RSVP system",p:"399"}
+  ]},
+  { cat:"Buying Advice / Advisory Visit", icon:"🧭", services:[
+    {n:"Which laptop to buy",p:"299"},{n:"Which phone to buy",p:"199"},{n:"Which printer/router to buy",p:"199"},{n:"What software to use",p:"299"},{n:"How to digitize the shop",p:"499"},{n:"What to automate first",p:"399"},{n:"What to stop paying for",p:"299"},{n:"Home/family tech audit",p:"599"},{n:"Office/shop tech audit",p:"799"}
+  ]},
+  { cat:"Training & Handholding", icon:"🎯", services:[
+    {n:"Teach my parents how to use phone/laptop",p:"599"},{n:"Teach my staff to use software",p:"799"},{n:"AI training for teams",p:"999"},{n:"WhatsApp Business training",p:"499"},{n:"Excel/Sheets basics",p:"499"},{n:"Cyber hygiene training",p:"599"},{n:"Social media content training",p:"699"},{n:"Business owner digital literacy session",p:"799"}
+  ]},
+  { cat:"Ongoing Support Plans", icon:"🔄", services:[
+    {n:"Monthly family tech support",p:"1,499/mo"},{n:"Monthly business tech support",p:"2,499/mo"},{n:"Remote helpdesk support",p:"999/mo"},{n:"Quarterly cyber checkup",p:"999/qtr"},{n:"Monthly content support",p:"2,999/mo"},{n:"Device maintenance plan",p:"799/mo"},{n:"Founder productivity support plan",p:"1,999/mo"}
+  ]},
+  { cat:"Premium Concierge", icon:"⭐", services:[
+    {n:"Personal tech manager",p:"4,999/mo"},{n:"Family digital setup day",p:"2,999"},{n:"Business digitization day",p:"3,999"},{n:"Founder workflow redesign",p:"3,499"},{n:"Full home-office setup",p:"4,999"},{n:"Full shop tech transformation",p:"5,999"},{n:"\"Come and solve everything\" visit",p:"2,999"}
+  ]},
+  { cat:"Remote Follow-On Project Work", icon:"📊", services:[
+    {n:"Custom dashboard",p:"2,999"},{n:"CRM customization",p:"2,499"},{n:"Website improvements",p:"1,499"},{n:"Automation build",p:"1,999"},{n:"Reporting system",p:"1,999"},{n:"Lead-gen systems",p:"2,499"},{n:"Content ops system",p:"1,999"},{n:"Inventory logic improvement",p:"1,499"},{n:"Proposal/quotation generator",p:"1,499"},{n:"Booking/order management system",p:"2,999"}
+  ]}
 ];
 
-const container = document.getElementById('serviceContainer');
-const searchBox = document.getElementById('searchBox');
-const searchCount = document.getElementById('searchCount');
-const noResults = document.getElementById('noResults');
+// POPULAR SERVICES
+const POPULAR = [
+  {n:"New Laptop Setup", p:"499", icon:"💻", tag:"Popular"},
+  {n:"Wi-Fi Router Setup", p:"399", icon:"📶", tag:"Popular"},
+  {n:"WhatsApp Backup & Restore", p:"299", icon:"📱", tag:"Popular"},
+  {n:"Slow Laptop Cleanup", p:"499", icon:"🛠️", tag:"Popular"},
+  {n:"Help for Elderly Parents", p:"499", icon:"👨‍👩‍👧‍👦", tag:"Family"},
+  {n:"Password Manager Setup", p:"399", icon:"🔒", tag:"Safety"},
+  {n:"ChatGPT Setup", p:"299", icon:"🤖", tag:"Trending"},
+  {n:"WhatsApp Business Setup", p:"349", icon:"🏪", tag:"Business"},
+  {n:"Google Business Profile Setup", p:"349", icon:"🌐", tag:"Business"},
+  {n:"Reels Shooting Support", p:"799", icon:"🎬", tag:"Creator"},
+  {n:"One-Page Website Setup", p:"1,999", icon:"🌐", tag:"Popular"},
+  {n:"\"Come and Solve Everything\" Visit", p:"2,999", icon:"⭐", tag:"Premium"}
+];
 
-// Render categories
+// Render popular
+const popWrap = document.getElementById('popularWrap');
+const popGrid = document.createElement('div');
+popGrid.className = 'popular-grid';
+POPULAR.forEach(s => {
+  const card = document.createElement('div');
+  card.className = 'popular-card';
+  card.onclick = () => window.open(waLink(s.n), '_blank');
+  card.innerHTML = `
+    <div class="pop-tag">${s.tag}</div>
+    <div class="pop-icon">${s.icon}</div>
+    <div class="pop-name">${s.n}</div>
+    <div class="pop-price">from ₹${s.p}</div>
+    <div class="pop-book">${waSvg} Book on WhatsApp</div>
+  `;
+  popGrid.appendChild(card);
+});
+popWrap.appendChild(popGrid);
+
+// Render category grid
+const catGrid = document.getElementById('catGrid');
 SERVICES.forEach((cat, i) => {
-  const div = document.createElement('div');
-  div.className = 'category';
-  div.dataset.index = i;
-  div.innerHTML = `
-    <div class="cat-header" onclick="toggleCat(this)">
+  const card = document.createElement('div');
+  card.className = 'cat-card';
+  card.dataset.index = i;
+  card.innerHTML = `
+    <div class="cat-top" onclick="toggleCard(this.parentElement)">
       <div class="cat-icon">${cat.icon}</div>
-      <div class="cat-title">${cat.cat}</div>
-      <div class="cat-count">${cat.services.length}</div>
+      <div class="cat-info">
+        <div class="cat-title">${cat.cat}</div>
+        <div class="cat-meta">${cat.services.length} services · from ₹${cat.services.reduce((min,s) => {const v=parseInt(s.p.replace(/,/g,''));return v<min?v:min},99999).toLocaleString('en-IN')}</div>
+      </div>
       <div class="cat-arrow">▼</div>
     </div>
-    <div class="cat-services">
-      <div class="service-grid">
-        ${cat.services.map(s => `<div class="service-item" onclick="bookService('${s.replace(/'/g,"\\'")}')"><div class="dot"></div><span>${s}</span></div>`).join('')}
+    <div class="cat-expand">
+      <div class="svc-grid">
+        ${cat.services.map(s => `
+          <div class="svc-item" onclick="event.stopPropagation();window.open('${waLink(s.n)}','_blank')">
+            <div class="svc-left"><div class="dot"></div><span class="svc-name">${s.n}</span></div>
+            <div class="svc-price">₹${s.p}</div>
+          </div>
+        `).join('')}
       </div>
     </div>
   `;
-  container.appendChild(div);
+  catGrid.appendChild(card);
 });
 
-// Total count
 const totalServices = SERVICES.reduce((a,c) => a + c.services.length, 0);
+const searchBox = document.getElementById('searchBox');
+const searchCount = document.getElementById('searchCount');
+const noResults = document.getElementById('noResults');
 searchCount.textContent = `${totalServices} services available at your doorstep`;
 
-function toggleCat(el) {
-  el.classList.toggle('open');
-}
-
-function bookService(name) {
-  const msg = encodeURIComponent(`Hi Triberr! I need help with: ${name}`);
-  window.open(`https://wa.me/918496861622?text=${msg}`, '_blank');
+function toggleCard(card) {
+  const wasOpen = card.classList.contains('open');
+  // Close all others
+  document.querySelectorAll('.cat-card.open').forEach(c => c.classList.remove('open'));
+  if (!wasOpen) card.classList.add('open');
 }
 
 // Search
 searchBox.addEventListener('input', function() {
   const q = this.value.toLowerCase().trim();
   let totalVisible = 0;
+  const popSection = document.querySelector('.popular-wrap');
+  const popTitle = document.querySelector('.section-title');
+  const popSub = document.querySelector('.section-subtitle');
 
-  document.querySelectorAll('.category').forEach((catDiv, i) => {
+  // Hide popular section when searching
+  const hidePopular = q.length > 0;
+  popSection.style.display = hidePopular ? 'none' : '';
+  popTitle.style.display = hidePopular ? 'none' : '';
+  popSub.style.display = hidePopular ? 'none' : '';
+
+  document.querySelectorAll('.cat-card').forEach((card, i) => {
     const cat = SERVICES[i];
-    const items = catDiv.querySelectorAll('.service-item');
+    const items = card.querySelectorAll('.svc-item');
     let catVisible = 0;
 
     items.forEach((item, j) => {
-      const match = !q || cat.services[j].toLowerCase().includes(q) || cat.cat.toLowerCase().includes(q);
+      const match = !q || cat.services[j].n.toLowerCase().includes(q) || cat.cat.toLowerCase().includes(q);
       item.classList.toggle('hidden', !match);
       if (match) catVisible++;
     });
 
-    catDiv.style.display = catVisible ? '' : 'none';
+    card.style.display = catVisible ? '' : 'none';
     totalVisible += catVisible;
 
-    // Auto-open matching categories when searching
-    const header = catDiv.querySelector('.cat-header');
     if (q && catVisible > 0) {
-      header.classList.add('open');
+      card.classList.add('open');
     } else if (!q) {
-      header.classList.remove('open');
+      card.classList.remove('open');
     }
   });
 
