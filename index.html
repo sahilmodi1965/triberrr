@@ -27,6 +27,19 @@ a{text-decoration:none;color:inherit}
 .hero-steps .step .num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.15);font-weight:700;margin-bottom:6px;font-size:.95rem}
 .hero-steps .step p{font-size:.85rem}
 
+/* EXPERT PROFILE */
+.expert-section{max-width:800px;margin:-10px auto 20px;padding:0 20px;position:relative;z-index:2}
+.expert-card{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.expert-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#0f3460);display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;color:#fff;flex-shrink:0;overflow:hidden}
+.expert-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.expert-info{flex:1;min-width:0}
+.expert-name{font-size:1.2rem;font-weight:800;margin-bottom:2px}
+.expert-city{font-size:.88rem;color:var(--muted);margin-bottom:8px}
+.expert-city svg{width:14px;height:14px;vertical-align:-2px;margin-right:3px;fill:var(--muted)}
+.expert-since{font-size:.78rem;color:var(--muted);margin-bottom:8px}
+.expert-specialties{display:flex;flex-wrap:wrap;gap:6px}
+.expert-tag{background:#fff0f3;color:var(--accent);font-size:.72rem;padding:3px 10px;border-radius:20px;font-weight:600;border:1px solid rgba(233,69,96,.15)}
+
 /* SECTION TITLES */
 .section-title{max-width:1200px;margin:0 auto;padding:10px 20px 16px;font-size:1.4rem;font-weight:800;color:var(--primary)}
 .section-title .highlight{color:var(--accent)}
@@ -75,6 +88,39 @@ a{text-decoration:none;color:inherit}
 .svc-price{font-size:.8rem;color:var(--accent);font-weight:700;white-space:nowrap;flex-shrink:0}
 .svc-item.hidden{display:none}
 
+/* BOOKING MODAL */
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal-overlay.show{display:flex}
+.modal-box{background:var(--card);border-radius:var(--radius);padding:32px 28px;max-width:400px;width:100%;text-align:center;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.2);animation:modalIn .25s ease}
+@keyframes modalIn{from{opacity:0;transform:scale(.92) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-close{position:absolute;top:12px;right:16px;font-size:1.5rem;cursor:pointer;color:var(--muted);background:none;border:none;line-height:1}
+.modal-close:hover{color:var(--text)}
+.modal-icon{font-size:2.5rem;margin-bottom:12px}
+.modal-svc-name{font-size:1.15rem;font-weight:800;margin-bottom:4px}
+.modal-svc-price{font-size:1.1rem;color:var(--accent);font-weight:700;margin-bottom:20px}
+.modal-wa-btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;padding:14px 32px;border-radius:50px;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:all .2s;width:100%;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.3)}
+.modal-wa-btn:hover{background:var(--green-hover);transform:translateY(-2px)}
+.modal-wa-btn svg{width:20px;height:20px;fill:#fff}
+.modal-call-btn{display:inline-flex;align-items:center;gap:8px;justify-content:center;margin-top:12px;color:var(--primary);font-weight:600;font-size:.92rem;padding:10px;border:2px solid var(--border);border-radius:50px;width:100%;transition:all .2s;background:transparent}
+.modal-call-btn:hover{border-color:var(--primary);background:var(--bg)}
+.modal-call-btn svg{width:18px;height:18px;fill:none;stroke:var(--primary);stroke-width:2}
+.modal-divider{font-size:.8rem;color:var(--muted);margin:12px 0 0;text-align:center}
+
+/* BECOME EXPERT SECTION */
+.become-expert{background:linear-gradient(135deg,#0f3460 0%,#1a1a2e 100%);color:#fff;padding:60px 20px;text-align:center;position:relative;overflow:hidden}
+.become-expert::before{content:'';position:absolute;top:-50%;right:-30%;width:80%;height:200%;background:radial-gradient(circle,rgba(233,69,96,.1) 0%,transparent 60%);pointer-events:none}
+.become-expert h2{font-size:clamp(1.5rem,4vw,2rem);font-weight:800;margin-bottom:8px}
+.become-expert h2 span{color:var(--accent)}
+.become-expert .be-sub{font-size:1rem;opacity:.8;max-width:500px;margin:0 auto 8px}
+.become-expert .be-detail{font-size:.9rem;opacity:.55;max-width:480px;margin:0 auto 28px}
+.become-expert .be-perks{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-bottom:28px}
+.become-expert .be-perk{text-align:center;opacity:.85}
+.become-expert .be-perk .perk-icon{font-size:1.5rem;margin-bottom:4px}
+.become-expert .be-perk p{font-size:.82rem}
+.be-cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;font-size:1.05rem;font-weight:700;padding:14px 32px;border-radius:50px;transition:all .2s;box-shadow:0 4px 20px rgba(233,69,96,.35)}
+.be-cta:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 6px 28px rgba(233,69,96,.45)}
+.be-cta svg{width:20px;height:20px;fill:#fff}
+
 /* FLOATING CTA */
 .float-cta{position:fixed;bottom:24px;right:24px;z-index:100;display:flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:14px 24px;border-radius:50px;font-weight:700;font-size:1rem;box-shadow:0 4px 24px rgba(37,211,102,.45);transition:all .2s;animation:pulse 2s infinite}
 .float-cta:hover{background:var(--green-hover);transform:scale(1.05)}
@@ -90,6 +136,23 @@ a{text-decoration:none;color:inherit}
 .footer .cta-btn svg{width:20px;height:20px;fill:#fff}
 .footer .note{margin-top:20px;font-size:.8rem;opacity:.4}
 
+/* RATING SECTION */
+.rating-section{background:var(--card);padding:50px 20px;text-align:center;border-top:1px solid var(--border)}
+.rating-section h2{font-size:1.5rem;font-weight:800;margin-bottom:6px;color:var(--primary)}
+.rating-section .rating-sub{font-size:.9rem;color:var(--muted);margin-bottom:24px}
+.rating-form{max-width:440px;margin:0 auto}
+.star-row{display:flex;justify-content:center;gap:8px;margin-bottom:20px}
+.star-btn{background:none;border:none;font-size:2.2rem;cursor:pointer;color:var(--border);transition:all .15s;padding:0;line-height:1}
+.star-btn.active,.star-btn:hover{color:#f5a623;transform:scale(1.15)}
+.rating-input{width:100%;padding:12px 16px;border:2px solid var(--border);border-radius:10px;font-size:.95rem;outline:none;transition:border .2s;font-family:inherit;margin-bottom:10px;background:var(--bg)}
+.rating-input:focus{border-color:var(--accent)}
+textarea.rating-input{resize:vertical;min-height:80px}
+.rating-submit{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:12px 28px;border-radius:50px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;transition:all .2s;margin-top:4px}
+.rating-submit:hover{background:var(--accent-hover);transform:translateY(-2px)}
+.rating-submit svg{width:18px;height:18px;fill:#fff}
+.trust-badge{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:10px 20px;background:var(--bg);border-radius:50px;font-size:.82rem;color:var(--muted);font-weight:600;border:1px solid var(--border)}
+.trust-badge svg{width:16px;height:16px;fill:var(--accent)}
+
 /* NO RESULTS */
 .no-results{display:none;text-align:center;padding:40px 20px;color:var(--muted)}
 .no-results.show{display:block}
@@ -100,16 +163,21 @@ a{text-decoration:none;color:inherit}
 @media(max-width:768px){
   .hero{padding:44px 16px 45px}
   .hero-steps{gap:20px}
+  .expert-card{flex-direction:column;text-align:center;padding:20px}
+  .expert-specialties{justify-content:center}
   .popular-grid{grid-template-columns:repeat(2,1fr);gap:10px}
   .cat-grid{grid-template-columns:1fr}
   .svc-grid{grid-template-columns:1fr}
   .float-cta span.label{display:none}
   .float-cta{padding:14px 18px;bottom:16px;right:16px}
   .section-title{font-size:1.2rem}
+  .become-expert .be-perks{gap:16px}
+  .modal-box{padding:24px 20px}
 }
 @media(max-width:400px){
   .popular-grid{grid-template-columns:1fr}
   .popular-card{padding:14px}
+  .expert-avatar{width:60px;height:60px;font-size:1.3rem}
 }
 </style>
 </head>
@@ -118,9 +186,9 @@ a{text-decoration:none;color:inherit}
 <!-- HERO -->
 <section class="hero">
   <h1><span>Triberr</span></h1>
-  <p class="tagline">A tech expert at your doorstep. Setup, fix, or learn — we come to you.</p>
+  <p class="tagline" id="heroTagline">A tech expert at your doorstep. Setup, fix, or learn — we come to you.</p>
   <p class="sub">For families, students, founders, shops & communities</p>
-  <a href="https://wa.me/918496861622?text=Hi%20Triberr!%20I%20need%20help%20with%20..." class="hero-cta" target="_blank">
+  <a href="#" class="hero-cta" id="heroCta" target="_blank">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     Book a Visit on WhatsApp
   </a>
@@ -130,6 +198,9 @@ a{text-decoration:none;color:inherit}
     <div class="step"><div class="num">3</div><p>Expert shows up</p></div>
   </div>
 </section>
+
+<!-- EXPERT PROFILE -->
+<div class="expert-section" id="expertSection"></div>
 
 <!-- SEARCH -->
 <div class="search-wrap">
@@ -146,7 +217,7 @@ a{text-decoration:none;color:inherit}
 <!-- NO RESULTS -->
 <div class="no-results" id="noResults">
   <h3>No services found</h3>
-  <p>Can't find what you need? Just ask us — <a href="https://wa.me/918496861622?text=Hi%20Triberr!%20I%20need%20help%20with%20..." target="_blank">message on WhatsApp</a></p>
+  <p>Can't find what you need? Just ask us — <a id="noResultsLink" href="#" target="_blank">message on WhatsApp</a></p>
 </div>
 
 <!-- ALL SERVICES -->
@@ -156,29 +227,107 @@ a{text-decoration:none;color:inherit}
   <div class="cat-grid" id="catGrid"></div>
 </div>
 
+<!-- BECOME A TRIBERR EXPERT -->
+<section class="become-expert">
+  <h2>Start <span>Earning</span> in Your Community</h2>
+  <p class="be-sub">Get your own Triberr page. Set your WhatsApp number. Start booking doorstep visits.</p>
+  <p class="be-detail">Join a growing network of local tech experts helping families, shops, and communities.</p>
+  <div class="be-perks">
+    <div class="be-perk"><div class="perk-icon">📱</div><p>Your own page</p></div>
+    <div class="be-perk"><div class="perk-icon">💰</div><p>Set your prices</p></div>
+    <div class="be-perk"><div class="perk-icon">📍</div><p>Serve locally</p></div>
+    <div class="be-perk"><div class="perk-icon">🚀</div><p>Zero investment</p></div>
+  </div>
+  <a href="#" class="be-cta" id="becomeExpertCta" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Join as Expert
+  </a>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
   <h2>Need tech help? We'll come to you.</h2>
   <p>Just send a WhatsApp message. A trained tech expert will visit your home, shop, or office.</p>
-  <a href="https://wa.me/918496861622?text=Hi%20Triberr!%20I%20need%20help%20with%20..." class="cta-btn" target="_blank">
+  <a href="#" class="cta-btn" id="footerCta" target="_blank">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     WhatsApp Us Now
   </a>
-  <p class="note">Triberr — Doorstep tech help for everyone. Pilot program.</p>
+  <p class="note">Triberr — Doorstep tech help for everyone.</p>
 </footer>
 
+<!-- RATE YOUR VISIT -->
+<section class="rating-section">
+  <h2>Rate Your Visit</h2>
+  <p class="rating-sub">Help us improve. Your feedback goes directly to the Triberr team.</p>
+  <div class="rating-form">
+    <div class="star-row" id="starRow">
+      <button class="star-btn" data-star="1">&#9733;</button>
+      <button class="star-btn" data-star="2">&#9733;</button>
+      <button class="star-btn" data-star="3">&#9733;</button>
+      <button class="star-btn" data-star="4">&#9733;</button>
+      <button class="star-btn" data-star="5">&#9733;</button>
+    </div>
+    <input type="text" class="rating-input" id="ratingName" placeholder="Your name (optional)">
+    <textarea class="rating-input" id="ratingComment" placeholder="Tell us about your experience (optional)"></textarea>
+    <button class="rating-submit" id="ratingSubmit">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      Submit via WhatsApp
+    </button>
+    <div>
+      <div class="trust-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2L3.5 6.5v5.4C3.5 17 7.1 21.4 12 22.8c4.9-1.4 8.5-5.8 8.5-10.9V6.5L12 2zm-1 15l-4-4 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg>
+        Trusted by community
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-icon" id="modalIcon"></div>
+    <div class="modal-svc-name" id="modalSvcName"></div>
+    <div class="modal-svc-price" id="modalSvcPrice"></div>
+    <button class="modal-wa-btn" id="modalWaBtn">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Book via WhatsApp
+    </button>
+    <div class="modal-divider">or</div>
+    <a href="#" class="modal-call-btn" id="modalCallBtn">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      Call Us
+    </a>
+  </div>
+</div>
+
 <!-- FLOATING CTA -->
-<a href="https://wa.me/918496861622?text=Hi%20Triberr!%20I%20need%20help%20with%20..." class="float-cta" target="_blank">
+<a href="#" class="float-cta" id="floatCta" target="_blank">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span class="label">WhatsApp Us</span>
 </a>
 
 <script>
-const WA = "918496861622";
-const waLink = (svc) => `https://wa.me/${WA}?text=${encodeURIComponent("Hi Triberr! I need help with: " + svc)}`;
+// ========== CONFIG ==========
+// Each Triberr Expert customizes this section only.
+const CONFIG = {
+  expertName: "Triberr Expert",
+  phone: "918496861622",
+  city: "Your City",
+  tagline: "Doorstep tech help in your neighbourhood",
+  photo: "", // optional URL to profile photo
+  upiId: "", // optional, for display only
+  expertSince: "2025",
+  specialties: [] // e.g. ["AI Setup", "Home Wi-Fi", "Business Digitization"]
+};
+
+// ========== CONSTANTS ==========
+const ADMIN_NUMBER = "918496861622";
+const waLink = (svc, price) => `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(`Hi Triberr! I'd like to book: ${svc} (${price ? "₹" + price : "pricing TBD"})`)}`;
+const waGeneric = () => `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent("Hi Triberr! I need help with ...")}`;
 const waSvg = `<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
 
-// SERVICE DATA with INR pricing
+// ========== SERVICE DATA ==========
 const SERVICES = [
   { cat:"Home Device Setup", icon:"💻", services:[
     {n:"New laptop setup",p:"499"},{n:"New phone setup",p:"299"},{n:"Tablet/iPad setup",p:"399"},{n:"Desktop setup",p:"599"},{n:"MacBook setup",p:"599"},{n:"Smartwatch setup",p:"299"},{n:"Data transfer from old device",p:"499"},{n:"App installation",p:"199"},{n:"Language/settings personalization",p:"199"},{n:"Email/account sign-in setup",p:"199"}
@@ -260,7 +409,6 @@ const SERVICES = [
   ]}
 ];
 
-// POPULAR SERVICES
 const POPULAR = [
   {n:"New Laptop Setup", p:"499", icon:"💻", tag:"Popular"},
   {n:"Wi-Fi Router Setup", p:"399", icon:"📶", tag:"Popular"},
@@ -276,14 +424,105 @@ const POPULAR = [
   {n:"\"Come and Solve Everything\" Visit", p:"2,999", icon:"⭐", tag:"Premium"}
 ];
 
-// Render popular
+// ========== INIT: Apply CONFIG to page ==========
+function initConfig() {
+  // Set tagline
+  if (CONFIG.tagline) {
+    document.getElementById('heroTagline').textContent = CONFIG.tagline;
+  }
+  // Set page title
+  document.title = `Triberr — ${CONFIG.expertName} | Doorstep Tech Help`;
+
+  // Set WhatsApp links
+  const genericWa = waGeneric();
+  document.getElementById('heroCta').href = genericWa;
+  document.getElementById('footerCta').href = genericWa;
+  document.getElementById('floatCta').href = genericWa;
+  document.getElementById('noResultsLink').href = genericWa;
+
+  // Become Expert CTA (always goes to admin number)
+  document.getElementById('becomeExpertCta').href =
+    `https://wa.me/${ADMIN_NUMBER}?text=${encodeURIComponent(`Hi! I want to become a Triberr Expert in ${CONFIG.city}`)}`;
+
+  // Phone for call button
+  const phoneFormatted = CONFIG.phone.replace(/^91/, '+91');
+  document.getElementById('modalCallBtn').href = `tel:${phoneFormatted}`;
+}
+
+// ========== EXPERT PROFILE ==========
+function renderExpertProfile() {
+  const section = document.getElementById('expertSection');
+  const initials = CONFIG.expertName.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+  const avatarContent = CONFIG.photo
+    ? `<img src="${CONFIG.photo}" alt="${CONFIG.expertName}">`
+    : initials;
+
+  const specialtiesHtml = CONFIG.specialties.length > 0
+    ? CONFIG.specialties.map(s => `<span class="expert-tag">${s}</span>`).join('')
+    : '';
+
+  const upiHtml = CONFIG.upiId
+    ? `<div style="font-size:.78rem;color:var(--muted);margin-top:4px">UPI: ${CONFIG.upiId}</div>`
+    : '';
+
+  section.innerHTML = `
+    <div class="expert-card">
+      <div class="expert-avatar">${avatarContent}</div>
+      <div class="expert-info">
+        <div class="expert-name">${CONFIG.expertName}</div>
+        <div class="expert-city">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          ${CONFIG.city}
+        </div>
+        <div class="expert-since">Serving since ${CONFIG.expertSince}</div>
+        ${specialtiesHtml ? `<div class="expert-specialties">${specialtiesHtml}</div>` : ''}
+        ${upiHtml}
+      </div>
+    </div>
+  `;
+}
+
+// ========== BOOKING MODAL ==========
+const modal = document.getElementById('bookingModal');
+const modalIcon = document.getElementById('modalIcon');
+const modalSvcName = document.getElementById('modalSvcName');
+const modalSvcPrice = document.getElementById('modalSvcPrice');
+const modalWaBtn = document.getElementById('modalWaBtn');
+const modalClose = document.getElementById('modalClose');
+
+function openBookingModal(name, price, icon) {
+  modalIcon.textContent = icon || '';
+  modalSvcName.textContent = name;
+  modalSvcPrice.textContent = price ? `₹${price}` : 'Contact for pricing';
+  modalWaBtn.onclick = () => {
+    window.open(waLink(name, price), '_blank');
+    closeBookingModal();
+  };
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBookingModal() {
+  modal.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeBookingModal);
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) closeBookingModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeBookingModal();
+});
+
+// ========== RENDER POPULAR ==========
 const popWrap = document.getElementById('popularWrap');
 const popGrid = document.createElement('div');
 popGrid.className = 'popular-grid';
 POPULAR.forEach(s => {
   const card = document.createElement('div');
   card.className = 'popular-card';
-  card.onclick = () => window.open(waLink(s.n), '_blank');
+  card.onclick = () => openBookingModal(s.n, s.p, s.icon);
   card.innerHTML = `
     <div class="pop-tag">${s.tag}</div>
     <div class="pop-icon">${s.icon}</div>
@@ -295,7 +534,7 @@ POPULAR.forEach(s => {
 });
 popWrap.appendChild(popGrid);
 
-// Render category grid
+// ========== RENDER CATEGORIES ==========
 const catGrid = document.getElementById('catGrid');
 SERVICES.forEach((cat, i) => {
   const card = document.createElement('div');
@@ -313,7 +552,7 @@ SERVICES.forEach((cat, i) => {
     <div class="cat-expand">
       <div class="svc-grid">
         ${cat.services.map(s => `
-          <div class="svc-item" onclick="event.stopPropagation();window.open('${waLink(s.n)}','_blank')">
+          <div class="svc-item" onclick="event.stopPropagation();openBookingModal('${s.n.replace(/'/g, "\\'")}','${s.p}','${cat.icon}')">
             <div class="svc-left"><div class="dot"></div><span class="svc-name">${s.n}</span></div>
             <div class="svc-price">₹${s.p}</div>
           </div>
@@ -324,6 +563,7 @@ SERVICES.forEach((cat, i) => {
   catGrid.appendChild(card);
 });
 
+// ========== SEARCH ==========
 const totalServices = SERVICES.reduce((a,c) => a + c.services.length, 0);
 const searchBox = document.getElementById('searchBox');
 const searchCount = document.getElementById('searchCount');
@@ -332,12 +572,10 @@ searchCount.textContent = `${totalServices} services available at your doorstep`
 
 function toggleCard(card) {
   const wasOpen = card.classList.contains('open');
-  // Close all others
   document.querySelectorAll('.cat-card.open').forEach(c => c.classList.remove('open'));
   if (!wasOpen) card.classList.add('open');
 }
 
-// Search
 searchBox.addEventListener('input', function() {
   const q = this.value.toLowerCase().trim();
   let totalVisible = 0;
@@ -345,7 +583,6 @@ searchBox.addEventListener('input', function() {
   const popTitle = document.querySelector('.section-title');
   const popSub = document.querySelector('.section-subtitle');
 
-  // Hide popular section when searching
   const hidePopular = q.length > 0;
   popSection.style.display = hidePopular ? 'none' : '';
   popTitle.style.display = hidePopular ? 'none' : '';
@@ -378,6 +615,47 @@ searchBox.addEventListener('input', function() {
 
   noResults.classList.toggle('show', totalVisible === 0 && q.length > 0);
 });
+
+// ========== RATING SYSTEM ==========
+let selectedStars = 0;
+const starBtns = document.querySelectorAll('.star-btn');
+
+starBtns.forEach(btn => {
+  btn.addEventListener('mouseenter', () => {
+    const star = parseInt(btn.dataset.star);
+    starBtns.forEach(b => b.classList.toggle('active', parseInt(b.dataset.star) <= star));
+  });
+  btn.addEventListener('click', () => {
+    selectedStars = parseInt(btn.dataset.star);
+    starBtns.forEach(b => b.classList.toggle('active', parseInt(b.dataset.star) <= selectedStars));
+  });
+});
+
+document.getElementById('starRow').addEventListener('mouseleave', () => {
+  starBtns.forEach(b => b.classList.toggle('active', parseInt(b.dataset.star) <= selectedStars));
+});
+
+document.getElementById('ratingSubmit').addEventListener('click', () => {
+  if (selectedStars === 0) {
+    alert('Please select a star rating first.');
+    return;
+  }
+  const name = document.getElementById('ratingName').value.trim() || 'Anonymous';
+  const comment = document.getElementById('ratingComment').value.trim() || 'No comment';
+  const msg = `RATING | Expert: ${CONFIG.expertName} | Stars: ${selectedStars}/5 | By: ${name} | Comment: ${comment}`;
+  const url = `https://wa.me/${ADMIN_NUMBER}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+
+  // Reset form
+  selectedStars = 0;
+  starBtns.forEach(b => b.classList.remove('active'));
+  document.getElementById('ratingName').value = '';
+  document.getElementById('ratingComment').value = '';
+});
+
+// ========== BOOT ==========
+initConfig();
+renderExpertProfile();
 </script>
 </body>
 </html>
